@@ -12,7 +12,8 @@ module.exports = function override(config, env) {
     config.resolve.alias = {
         ...config.resolve.alias,
         '@':resolve(''),
-        '@libs': resolve('libs')  
+        '@libs': resolve('libs'),
+        '@c': resolve('components')  
     }
     return config;
   };        
