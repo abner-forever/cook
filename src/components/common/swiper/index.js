@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
 
 class Swiper extends React.Component {
   state = {
@@ -25,7 +25,7 @@ class Swiper extends React.Component {
           style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
         >
           {this.state.data.map(val => (
-            <a
+            <div
               key={val}
               style={{ display: 'inline-block',  height: '214px' ,overflow:'hidden' }}
             >
@@ -39,7 +39,7 @@ class Swiper extends React.Component {
                   this.setState({ imgHeight: 214 });
                 }}
               />
-            </a>
+            </div>
           ))}
         </Carousel>
     );

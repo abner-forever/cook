@@ -2,6 +2,7 @@ import React ,{ Component } from 'react'
 import  Header from '@/components/common/header'
 import  Swiper from '@/components/common/swiper'
 import TabLink from './tab_link'
+import ShowList from './showlist'
 
 class Home extends Component {
     render(){
@@ -10,6 +11,7 @@ class Home extends Component {
                 <Header/>
                 <Swiper/>
                 <TabLink/>
+                <ShowList/>
             </div>
         )
     }
