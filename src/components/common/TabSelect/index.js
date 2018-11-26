@@ -1,7 +1,4 @@
 import React, {Component } from  'react'
-import { Route,  NavLink, Switch, Redirect } from 'react-router-dom'
-
-import { TabItem ,Icon} from './styledcomponents'
 import { ActiveOwnNavLink } from '../link'
  import './tab.css'
 class TabSelect extends Component {

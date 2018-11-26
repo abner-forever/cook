@@ -12,8 +12,9 @@ class TabLink extends Component {
                 {id: 2,title:'胖友圈',link:'get_yard_recipe_list'},
                 {id: 3,title:'热门',link:'get_week_top'}
             ],
-            activeindex:0,
-            isActive:false
+            activeindex:1,
+            isActive:false,
+            link_url:'get_recipe_list'
         }
     }
     render(){
@@ -26,36 +27,37 @@ class TabLink extends Component {
             </div>
         )
     }
+    componentDidMount(){
+        let { activeindex,link_url} = this.state
+
+        this.getShowList(activeindex,link_url)
+    }
     renderLinkItem=()=>{
-        let { tablinks } = this.state
+        let { tablinks , activeindex} = this.state
+        
         return tablinks.map(tab=>(
             <div 
                 key={tab.id}
-                className={'link-item'}
-                onClick={this.getShowList}
+                className={activeindex===tab.id ? 'link-item active' : 'link-item'}
+                onClick={this.getShowList.bind(this,tab.id,tab.link)}
                 index={tab.id}
             >
                 {tab.title}
             </div>
         ))
     }
-	getShowList =(e)=>{
-        if(e.target.index === this.state.activeindex){
-            console.log(222)
-        }
-        console.log(2,e.target.index)
-        console.log('req data')
-        this.props.getShowlist()
-        // this.setState({
-        //     activeindex: th
-        // })
+	getShowList =(id,link_url)=>{
+        this.props.getShowlist(link_url)
+        this.setState({
+            activeindex: id
+        })
 	}
 }
 
 const mapDispatchToProps =(dispatch)=>{
 	return {
-		getShowlist(){
-			dispatch(actionCreators.getRecipeList())
+		getShowlist(link_url){
+			dispatch(actionCreators.getRecipeList(link_url))
 		}
 	}
 }

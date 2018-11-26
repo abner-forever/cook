@@ -2,11 +2,11 @@ import * as types from './actionType'
 import axios from 'axios'
 import qs from 'qs'
 export default {
-    getRecipeList(){
+    getRecipeList(link_url){
         return{
             type:types.GET_RECIPE_LIST,
             payload: axios({
-                url:'/api/v1/get_recipe_list',
+                url:`/api/v1/${link_url}`,
                 method:'post',
                 data: qs.stringify({
                     pageNumber: 1,

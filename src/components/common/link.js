@@ -51,6 +51,6 @@ export const ActiveOwnNavLink = styled(OwnNavLink)`
     flex-direction:column;
     height:100%;
     align-items:center;
-    font-size:.16rem;
     color:#969696;
+    
 `

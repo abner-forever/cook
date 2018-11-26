@@ -8,7 +8,7 @@ import CourseHeader from "./header";
 class Course extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="course-container">
         <CourseHeader />
         <div className="courselist">
           <Switch>

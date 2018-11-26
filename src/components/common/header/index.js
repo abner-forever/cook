@@ -8,7 +8,7 @@ class Header extends Component {
                     <i></i>
                 </div>
                 <div className="center">
-                    焙忘录
+                    {this.props.children}
                 </div>
                 <div className="right">
                     <i></i>

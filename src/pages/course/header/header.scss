@@ -2,13 +2,14 @@
     // justify-content: center;
     .course{
         display: flex;
-        border-radius: 3px;
-        border: 1px solid #987A57;
-        margin-right: 100px;
+        border-radius: .08rem;
+        border: .013333rem solid #987A57;
+        margin-right: 2.666667rem;
         a{
             display:flex;
-            width: 80px;
-            height: 30px;
+            width: 2.133333rem;
+            height: .8rem;
+            font-size: .346667rem;
             &.active{
                 color: #fff;
                 background-color: #987A57;

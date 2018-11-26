@@ -6,7 +6,7 @@ class Swiper extends React.Component {
     data: [
         {id:1,pic:'http://beile.bakelulu.com.cn/recommend/o_1cer11hk91v351jv21c9g1hfa1j7co.png?imageView2/1/w/720/h/540' ,title:'Be a Child Today'}
     ],
-    imgHeight: 214,
+    imgHeight: 428,
   }
   componentDidMount() {
     // simulate img loading
@@ -27,7 +27,7 @@ class Swiper extends React.Component {
           {this.state.data.map(val => (
             <div
               key={val}
-              style={{ display: 'inline-block',  height: '214px' ,overflow:'hidden' }}
+              style={{ display: 'inline-block',  height: '2.853333rem' ,overflow:'hidden' }}
             >
               <img
                 src={val.pic}
@@ -36,7 +36,7 @@ class Swiper extends React.Component {
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 214 });
+                  this.setState({ imgHeight: 428 });
                 }}
               />
             </div>

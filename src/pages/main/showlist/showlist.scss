@@ -1,44 +1,48 @@
-.showlist-content{
+.showlist{
     width: 100%;
-    .listitem{
-        height: 214px;
-        margin-bottom: 2px;
-        position: relative;
-        img{
-            width: 100%;
-            height: 100%;
-        }
-        .title{
-            position: absolute;
-            left: 20px;
-            bottom: 15px;
-            color: #fff;
-            z-index: 10;
-            .big-title{
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1.5;
+    .content{
+        width: 100%;
+        .listitem{
+            height: 5.693333rem;
+            margin-bottom: .053333rem;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
             }
-            .desc{
-                font-size: 14px;
+            .title{
+                position: absolute;
+                left: .533333rem;
+                bottom: .4rem;
+                color: #fff;
+                z-index: 10;
+                .big-title{
+                    font-size: .48rem;
+                    font-weight: bold;
+                    line-height: 1.5;
+                }
+                .desc{
+                    font-size: .373333rem;
+                }
             }
-        }
-        .collect{
-            position: absolute;
-            right: 20px;
-            bottom: 15px;
-            z-index: 10;
-            color: #fff;
-            font-size: 12px;
-        }
-        .bgc{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: linear-gradient(-0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.00) 29%);
-            opacity: .8;
+            .collect{
+                position: absolute;
+                right: .533333rem;
+                bottom: .4rem;
+                z-index: 10;
+                color: #fff;
+                font-size: .32rem;
+            }
+            .bgc{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(-0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.00) 29%);
+                opacity: .8;
+            }
         }
     }
+    
 }

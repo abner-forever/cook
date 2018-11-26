@@ -1,43 +1,81 @@
-.courselist{
+.courselist {
     width: 100%;
-    .content{
+    .content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 15px 10px 0; 
+        padding: .2rem .2rem 0;
     }
-    .list-item{
-        width: 162px;
-        height: 164px;
+    
+    .list-item {
+        width: 48%;
+        height: 4.506667rem;
         background-color: #fff;
-        margin-bottom: 10px;
-        border-radius: 5px;
+        margin-bottom: .266667rem;
+        border-radius: .133333rem;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         box-sizing: border-box;
-        .img-box{
+        margin-right: .2rem;
+        .img-box {
             width: 100%;
-            height: 90px;
+            height: 2.4rem;
             position: relative;
             overflow: hidden;
-            img{
+
+            img {
                 width: 100%;
                 height: auto;
                 object-fit: fill;
             }
-            .collect{
+
+            .collect {
                 position: absolute;
-                bottom: 5px;
+                bottom: .133333rem;
                 color: #fff;
+                z-index: 9;
+            }
+            .bac{
+                width: 100%;
+                height: 100%;
+                opacity: 0.8;
+                background-image: linear-gradient(-0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.00) 29%);
+                position: absolute;
+                top: 0px;
             }
         }
-        .title{
-            padding: 10px;
+
+        .title {
+            padding: .266667rem;
         }
-        .info{
-            padding: 10px;
+
+        .info {
+            padding: .266667rem;
+            i {
+                display: inline-block;
+                width: .32rem;
+                height: .32rem;
+                background: url(/images/icons/star_n.png) no-repeat;
+                background-size: contain;
+
+                &.active {
+                    background: url(/images/icons/star_s.png) no-repeat;
+                    background-size: contain;
+
+                }
+            }
         }
+    }
+    .list-item:nth-of-type(even){
+        margin-right: 0;
+    }
+    
+    .no-more{
+        width: 100%;
+        text-align: center;
+        color: #969696;
+        padding:  .48rem .426667rem .533333rem .426667rem;
+        font-size: .426667rem;
     }
 }
