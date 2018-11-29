@@ -7,7 +7,7 @@ import actionCreators from './actionCreators'
 connect.addActions({
     main: actionCreators
 })
-
+//纯函数 //
 const reducer = (
     previous_state = default_state,
     action
@@ -15,7 +15,8 @@ const reducer = (
     let new_state = Object.assign({}, previous_state)
     switch(action.type){
         case types.GET_RECIPE_LIST+'_FULFILLED':
-        new_state.recipe_list = new_state.recipe_list.concat(action.payload.data.data)
+        console.log(action)
+        new_state.recipe_list =  action.payload.data.data 
         break;
         default : break;
     }

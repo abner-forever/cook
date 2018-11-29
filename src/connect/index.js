@@ -30,7 +30,6 @@ const _connect = function (Uicomponent, reducers = [])  {
         // 将对应的actionCreator的方法处理后传给UI组件
         reducers.forEach(reducer => {
             let name = (typeof reducer === 'string') ? reducer : reducer.name
-            
             result[name + '_actions'] = bindActionCreators(_connect.actions[name], dispatch)
             
         })

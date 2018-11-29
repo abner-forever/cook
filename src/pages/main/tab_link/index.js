@@ -46,7 +46,7 @@ class TabLink extends Component {
         ))
     }
 	getShowList =(id,link_url)=>{
-        let {page } = this.props
+        let { page } = this.props
         this.props.getShowlist(page,link_url)
         this.setState({
             activeindex: id

@@ -15,7 +15,7 @@ class ShowList extends Component {
 
     render() {
         let {addPage } = this.props
-        console.log(this)
+        console.log('render')
         return (
             <div className="showlist">
                 <ul className='content'>
@@ -28,9 +28,10 @@ class ShowList extends Component {
     
     renderShowItem = () => {
         let { recipelist } = this.props
-        return recipelist.map(item => (
+        console.log('recipelist',recipelist)
+        return recipelist.map((item,index) => (
             <li
-                key={item.recipe_id || item.relation_ids}
+                key={index }
                 className='listitem'
             >
                 <LazyLoad height={214}>
@@ -49,7 +50,6 @@ class ShowList extends Component {
     }
     componentDidMount(){
        
-        
     }
 
 }

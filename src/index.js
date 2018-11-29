@@ -5,8 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
-
+//提供挂载状态
 import { Provider } from 'react-redux'
+
 import store from './store'
 
 

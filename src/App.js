@@ -11,13 +11,15 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-					<Switch>
+					<Switch> 
+						{/* 只显示匹配的link */}
 						<Redirect from= '/' to = '/home' exact/>
 						<Route path= '/home' component= {Home}/>
 						<Route path= '/course' component= {Course}/>
 						<Route path= '/tool' component= {Tool}/>
 						<Route path= '/mine' component= {Mine}/>
 					</Switch>
+				{/* 切换选项卡 一级路由 */}
 				<TabSelect/>
 			</div>
 		);
