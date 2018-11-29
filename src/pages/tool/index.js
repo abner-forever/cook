@@ -1,10 +1,10 @@
 import React, {Component } from  'react'
-
+import Header from '@c/common/header'
 class Template extends Component {
     render(){
         return (
             <div className="container">
-                工作小工具
+                <Header>工具箱</Header>
             </div>
         )
     }

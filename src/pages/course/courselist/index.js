@@ -1,47 +1,45 @@
-import React, {Component } from  'react'
+import React, { Component } from 'react'
 import "./courselist.scss"
 import qs from 'qs'
 import LazyLoad from 'react-lazyload'
 import ViewMore from '@c/common/viewmore'
 class Template extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-			courselist : [],
-			pageNumber:1,
-			hasMore: true
+            courselist: [],
+            pageNumber: 1,
+            hasMore: true
         }
     }
-    componentDidMount (){
+    componentDidMount() {
         let num = 1;
-       this.getCourseList(num)
+        this.getCourseList(num)
     }
-    
-
-    render(){
+    render() {
         return (
             <div className="courselist">
                 <ul className='content'>
-                    { this.renderListItem() }
+                    {this.renderListItem()}
                 </ul>
-					{
-						this.state.hasMore? <ViewMore onClick={this.getMore}/>:<p className='no-more'>没有更多教程了</p>
-					}
+                {
+                    this.state.hasMore ? <ViewMore onClick={this.getMore} /> : <p className='no-more'>没有更多教程了</p>
+                }
             </div>
         )
     }
-    renderListItem=()=>{
+    renderListItem = () => {
         let { courselist } = this.state
-        return courselist.map(item=>(
-            <li 
-            key={item.course_id}
-            className='list-item'>
+        return courselist.map(item => (
+            <li
+                key={item.course_id}
+                className='list-item'>
                 <div className="img-box">
                     <LazyLoad height={162}>
-                        <img src={item.course_img} alt=""/>
+                        <img src={item.course_img} alt="" />
                     </LazyLoad>
                     <div className="collect">
-                        <span>收藏 {item.collect_num}</span> · <span>评论 {item.comment_count}</span> 
+                        <span>收藏 {item.collect_num}</span> · <span>评论 {item.comment_count}</span>
                     </div>
                     <div className='bac'></div>
                 </div>
@@ -55,63 +53,61 @@ class Template extends Component {
             </li>
         ))
     }
-    renderLevel=(lev)=>{
+    renderLevel = (lev) => {
 
-        for(let i=0;i<lev;i++){
-            console.log(i,999,lev)
+        for (let i = 0; i < lev; i++) {
+            console.log(i, 999, lev)
             // return <i className='active'></i>
         }
-       
-          
     }
-    getCourseList= ()=>{
-		if(!this.state.hasMore){
-			return false;
-		}
+    getCourseList = () => {
+        if (!this.state.hasMore) {
+            return false;
+        }
         this.axios({
-            url:'/api/v1/get_grow_course',
-            method:'post',
+            url: '/bwl/api/v1/get_grow_course',
+            method: 'post',
             data: qs.stringify({
                 pageNumber: this.state.pageNumber,
                 pageSize: 20,
                 user_id: '4fbe2ab3165646c7b2ccbdd92a37953d'
             })
         })
-        .then(res=>{
-			if(res.data.data===null){
-				console.log('没有了')
-				this.setState({
-					hasMore:false
-				})
-				return false
-			}else{
-				
-				if(res.data.data.length<20){
-					this.setState({
-						hasMore:false
-					})
-				}
-				this.setState({
-					courselist: this.state.courselist.concat(res.data.data)
-				})
-			}
-        })
-		
+            .then(res => {
+                if (res.data.data === null) {
+                    console.log('没有了')
+                    this.setState({
+                        hasMore: false
+                    })
+                    return false
+                } else {
+
+                    if (res.data.data.length < 20) {
+                        this.setState({
+                            hasMore: false
+                        })
+                    }
+                    this.setState({
+                        courselist: this.state.courselist.concat(res.data.data)
+                    })
+                }
+            })
+
     }
-    getMore=()=>{
-		console.log(this.state.hasMore)
-		this.setState({
-			pageNumber: ++this.state.pageNumber
-		})
+    getMore = () => {
+        console.log(this.state.hasMore)
+        this.setState({
+            pageNumber: ++this.state.pageNumber
+        })
         this.getCourseList()
-	}
-	shouldComponentUpdate(nextprops,nextstate){
-		if(nextstate.courselist===this.state.courselist){
-			console.log('不渲染',this.state.courselist)
-			return false
-		}
-		return true
-	}
+    }
+    shouldComponentUpdate(nextprops, nextstate) {
+        if (nextstate.courselist === this.state.courselist) {
+            console.log('不渲染', this.state.courselist)
+            return false
+        }
+        return true
+    }
 }
 
 export default Template

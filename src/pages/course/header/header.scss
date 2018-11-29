@@ -1,16 +1,19 @@
-.header{
+.header {
+
     // justify-content: center;
-    .course{
+    .course {
         display: flex;
         border-radius: .08rem;
         border: .013333rem solid #987A57;
         margin-right: 2.666667rem;
-        a{
-            display:flex;
+
+        a {
+            display: flex;
             width: 2.133333rem;
             height: .8rem;
             font-size: .346667rem;
-            &.active{
+
+            &.active {
                 color: #fff;
                 background-color: #987A57;
             }

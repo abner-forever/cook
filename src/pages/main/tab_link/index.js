@@ -14,11 +14,10 @@ class TabLink extends Component {
             ],
             activeindex:1,
             isActive:false,
-            link_url:'get_recipe_list'
+            link_url:'get_recipe_list',
         }
     }
     render(){
-        // this.getShowList()
         return (
             <div className="tab-link">
                 <div className="content">
@@ -29,7 +28,7 @@ class TabLink extends Component {
     }
     componentDidMount(){
         let { activeindex,link_url} = this.state
-
+        
         this.getShowList(activeindex,link_url)
     }
     renderLinkItem=()=>{
@@ -47,7 +46,8 @@ class TabLink extends Component {
         ))
     }
 	getShowList =(id,link_url)=>{
-        this.props.getShowlist(link_url)
+        let {page } = this.props
+        this.props.getShowlist(page,link_url)
         this.setState({
             activeindex: id
         })
@@ -56,8 +56,8 @@ class TabLink extends Component {
 
 const mapDispatchToProps =(dispatch)=>{
 	return {
-		getShowlist(link_url){
-			dispatch(actionCreators.getRecipeList(link_url))
+		getShowlist(page,link_url){
+			dispatch(actionCreators.getRecipeList(page,link_url))
 		}
 	}
 }

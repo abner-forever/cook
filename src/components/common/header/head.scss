@@ -1,4 +1,4 @@
-.header{
+.header {
     width: 100%;
     height: 1.173333rem;
     background: #FEDA6A;
@@ -8,13 +8,16 @@
     position: sticky;
     top: 0;
     z-index: 99;
-    .left , .right{
+
+    .left,
+    .right {
         width: 1.333333rem;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        i{
+
+        i {
             width: .533333rem;
             height: .533333rem;
             background: url(/images/icons/search.png) no-repeat;
@@ -22,13 +25,15 @@
             display: block;
         }
     }
+
     .right {
-        i{
+        i {
             background: url(/images/icons/gift.png) no-repeat;
             background-size: 100%;
         }
     }
-    .center{
+
+    .center {
         color: #323232;
         font-size: .48rem;
         letter-spacing: .010667rem;

@@ -3,7 +3,7 @@ import { View } from './stylecomponent'
 class ViewMore extends Component {
   render() {
     return (
-      <View>
+      <View {...this.props}>
         查看更多 <i>﹀</i>
       </View>
     );

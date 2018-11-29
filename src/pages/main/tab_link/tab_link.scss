@@ -1,24 +1,27 @@
-.tab-link{
+.tab-link {
     width: 100%;
     margin-top: .266667rem;
     box-sizing: border-box;
     background-color: #fff;
     padding: 0 1.6rem;
-    .content{
+
+    .content {
         height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         font-size: .426667rem;
         color: #323232;
-        .link-item{
+
+        .link-item {
             width: 33%;
             height: 1.093333rem;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: .08rem solid transparent;
-            &.active{
+
+            &.active {
                 color: #987A57;
                 border-bottom: .08rem solid #987A57;
             }
