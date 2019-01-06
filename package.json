@@ -8,7 +8,6 @@
     "babel-plugin-import": "^1.11.0",
     "better-scroll": "^1.13.2",
     "http-proxy-middleware": "^0.19.1",
-    "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-app-rewired": "^1.6.2",
     "react-dom": "^16.6.3",
@@ -36,5 +35,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
 }

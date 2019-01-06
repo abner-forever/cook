@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import "./courselist.scss"
 import qs from 'qs'
-import LazyLoad from 'react-lazyload'
+
+import ListItem from '../listitem/listitem'
 import ViewMore from '@c/common/viewmore'
-class Template extends Component {
+class CourseList extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -31,26 +32,30 @@ class Template extends Component {
     renderListItem = () => {
         let { courselist } = this.state
         return courselist.map(item => (
-            <li
-                key={item.course_id}
-                className='list-item'>
-                <div className="img-box">
-                    <LazyLoad height={162}>
-                        <img src={item.course_img} alt="" />
-                    </LazyLoad>
-                    <div className="collect">
-                        <span>收藏 {item.collect_num}</span> · <span>评论 {item.comment_count}</span>
-                    </div>
-                    <div className='bac'></div>
-                </div>
-                <div className="title">
-                    <p>{item.course_title}</p>
-                </div>
-                <div className="info">
-                    <div className="level">
-                    </div>
-                </div>
-            </li>
+            <ListItem 
+                item = {item}
+                key = {item.course_id}
+            />
+            // <li
+            //     key={item.course_id}
+            //     className='list-item'>
+            //     <div className="img-box">
+            //         <LazyLoad height={162}>
+            //             <img src={item.course_img} alt="" />
+            //         </LazyLoad>
+            //         <div className="collect">
+            //             <span>收藏 {item.collect_num}</span> · <span>评论 {item.comment_count}</span>
+            //         </div>
+            //         <div className='bac'></div>
+            //     </div>
+            //     <div className="title">
+            //         <p>{item.course_title}</p>
+            //     </div>
+            //     <div className="info">
+            //         <div className="level">
+            //         </div>
+            //     </div>
+            // </li>
         ))
     }
     renderLevel = (lev) => {
@@ -96,9 +101,9 @@ class Template extends Component {
     }
     getMore = () => {
         console.log(this.state.hasMore)
-        this.setState({
-            pageNumber: ++this.state.pageNumber
-        })
+        this.setState(()=>({
+            pageNumber: 1 + this.state.pageNumber
+        }))
         this.getCourseList()
     }
     shouldComponentUpdate(nextprops, nextstate) {
@@ -110,4 +115,4 @@ class Template extends Component {
     }
 }
 
-export default Template
+export default CourseList

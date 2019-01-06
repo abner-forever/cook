@@ -29,7 +29,7 @@ class Home extends Component {
     addPage=()=>{
         console.log('点了')
         this.setState({
-            page: ++ this.state.page
+            page: 1 + this.state.page
         })
     }
 }

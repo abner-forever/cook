@@ -7,6 +7,7 @@ import Tool from './pages/tool'
 import Mine from './pages/mine'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import TabSelect from '@/components/common/TabSelect'
+import Detail from './pages/detail/Detail'
 class App extends Component {
 	render() {
 		return (
@@ -21,6 +22,7 @@ class App extends Component {
 					</Switch>
 				{/* 切换选项卡 一级路由 */}
 				<TabSelect/>
+				<Route path="/detail/:id" component={Detail} />
 			</div>
 		);
 	}

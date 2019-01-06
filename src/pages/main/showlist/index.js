@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import LazyLoad from 'react-lazyload'
 import ViewMore from '@c/common/viewmore'
+import { Route, Switch} from 'react-router-dom'
+import ListItem from '@/pages/main/listitem/ListItem'
+import Detail from '@/pages/detail/Detail'
 
 import './showlist.scss'
 class ShowList extends Component {
     constructor(props) {
         super(props)
-        console.log(this.props.recipelist)
         this.state={
             page : 1
         }
@@ -19,33 +20,22 @@ class ShowList extends Component {
         return (
             <div className="showlist">
                 <ul className='content'>
+                    
                     {this.renderShowItem()}
                     <ViewMore onClick = {addPage.bind(this)} />
                 </ul>
+                <Switch>
+
+                <Route path='/detail' component={Detail} />
+                </Switch>
             </div>
         )
     }
-    
     renderShowItem = () => {
         let { recipelist } = this.props
         console.log('recipelist',recipelist)
         return recipelist.map((item,index) => (
-            <li
-                key={index }
-                className='listitem'
-            >
-                <LazyLoad height={214}>
-                    <img key={item.recipe_id} src={item.recipe_img || item.image} alt='' />
-                </LazyLoad>
-                <div className='title'>
-                    <div className='big-title'>{item.recipe_name}</div>
-                    <div className='desc'>{item.category_name}</div>
-                </div>
-                <div className='bgc'></div>
-                <div className='collect'>
-                    收藏{item.collect_num}<span> · </span>评论{item.comment_count}
-                </div>
-            </li>
+                <ListItem listitem = {item} key={index} to ='/detail' recipe_id={item.recipe_id}  />
         ))
     }
     componentDidMount(){
@@ -53,7 +43,7 @@ class ShowList extends Component {
     }
 
 }
-
+//订阅store状态 可以获取到数据
 const mapStateToProps = (state) => {
     //相当于vuex的getter //ui组件就可以直接从props中去取
     return {

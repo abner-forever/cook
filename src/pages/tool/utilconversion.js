@@ -62,8 +62,6 @@ class UtilConversion extends Component {
   render() {
     return (
       <div>
-         
-         
         <PickerView
           onChange= {this.onChange}
           onScrollChange={this.onScrollChange}
