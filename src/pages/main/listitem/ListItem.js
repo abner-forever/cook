@@ -9,7 +9,6 @@ class ListItem extends Component {
         return (
             <li
                 className='listitem'
-                
             >
                 <LazyLoad height={214}>
                     <img key={listitem.recipe_id} src={listitem.recipe_img || listitem.image} alt='' />

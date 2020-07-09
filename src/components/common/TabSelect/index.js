@@ -23,7 +23,7 @@ class TabSelect extends Component {
         )
     }
     renderTabItem=()=>{
-        let {tabs } = this.state;
+        let { tabs } = this.state;
         return tabs.map(tab=>(
             <ActiveOwnNavLink
                 tag='li'

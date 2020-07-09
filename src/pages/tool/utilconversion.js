@@ -10,11 +10,6 @@ import { PickerView, WhiteSpace } from 'antd-mobile';
 //         )
 //     }
 // }
-
-
-
- 
-
 const season = [
   {
     label: '摄氏度',
@@ -51,9 +46,8 @@ class UtilConversion extends Component {
     value: null,
   };
   onChange = (value) => {
-    console.log(value);
     this.setState({
-      value,
+      value
     });
   }
   onScrollChange = (value) => {

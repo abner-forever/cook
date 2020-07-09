@@ -25,7 +25,6 @@ class ShowList extends Component {
                     <ViewMore onClick = {addPage.bind(this)} />
                 </ul>
                 <Switch>
-
                 <Route path='/detail' component={Detail} />
                 </Switch>
             </div>

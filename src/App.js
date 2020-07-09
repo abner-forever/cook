@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-
 import Home from './pages/main/home'
 import Course from './pages/course'
 import Tool from './pages/tool'

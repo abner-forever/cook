@@ -11,9 +11,9 @@ class Swiper extends React.Component {
   componentDidMount() {
     // simulate img loading
     setTimeout(() => {
-      this.setState({
+      this.setState(()=>({
         data: [{id:1,pic:'http://beile.bakelulu.com.cn/recommend/o_1cer11hk91v351jv21c9g1hfa1j7co.png?imageView2/1/w/720/h/540' ,title:'Be a Child Today'}],
-      });
+      }));
     }, 100);
   }
   render() {
